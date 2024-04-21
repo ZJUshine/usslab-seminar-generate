@@ -3,7 +3,7 @@ import pandas as pd
 
 # 读取Excel文件
 excel_file = "./2024_Spring_Summer.xlsx"
-df = pd.read_excel(excel_file, header=None, skiprows=1, engine="openpyxl")
+df = pd.read_excel(excel_file, header=None, skiprows=1)
 cols_to_drop = df.columns[[4, 5]] # 因为Python索引从0开始，第5和第6列的索引是4和5
 df = df.drop(cols_to_drop, axis=1)
 df.columns = ['日期', '姓名', '文章', '会议']
