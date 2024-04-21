@@ -20,7 +20,7 @@ jobs:
             curl -o 2024_Spring_Summer.xlsx "https://docs.qq.com/sheet/DVEpjc3FuSUltVWNM?u=1c4a375951a947ad9ae08e18ae147e9c&tab=gccqz2"
     
         - name: Convert Excel to HTML
-          run: python convert_to_html.py
+          run: python excel2html.py
     
         - name: Upload HTML file to server
           uses: appleboy/scp-action@master
