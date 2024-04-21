@@ -15,14 +15,11 @@ jobs:
         - name: Checkout code
           uses: actions/checkout@v3
     
-        - name: Download Excel file
-          run: |
-            curl -o 2024_Spring_Summer.xlsx "https://docs.qq.com/sheet/DVEpjc3FuSUltVWNM?u=1c4a375951a947ad9ae08e18ae147e9c&tab=gccqz2"
-    
         - name: Install dependencies
           run: |
             python -m pip install --upgrade pip
-            python -m pip install pandas openpyxl
+            pip install -r requirements.txt
+
         - name: Convert Excel to HTML
           run: python excel2html.py
     

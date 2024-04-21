@@ -1,11 +1,14 @@
 # 遍历Excel中的数据，生成HTML模板
 import pandas as pd
+import gdown
+
+# 下载Excel文件
+excel_path = 'https://drive.google.com/uc?id=1mpHEXUUKO-8wjuAiwNW3Y350jmzO41x-'
+gdown.download(excel_path, "2024_Spring_Summer.xlsx", quiet=False)
 
 # 读取Excel文件
 excel_file = "./2024_Spring_Summer.xlsx"
-df = pd.read_excel(excel_file, header=None, skiprows=1)
-cols_to_drop = df.columns[[4, 5]] # 因为Python索引从0开始，第5和第6列的索引是4和5
-df = df.drop(cols_to_drop, axis=1)
+df = pd.read_excel(excel_file, header=None, skiprows=1,engine='openpyxl')
 df.columns = ['日期', '姓名', '文章', '会议']
 df.drop(0,inplace=True) # 删除相同的'日期', '姓名', '文章', '会议'行
 
