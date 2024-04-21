@@ -1,6 +1,5 @@
 # 遍历Excel中的数据，生成HTML模板
 import pandas as pd
-from datetime import datetime
 
 # 读取Excel文件
 excel_file = "./2024_Spring_Summer.xlsx"
