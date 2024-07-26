@@ -8,7 +8,7 @@ gdown.download(excel_path, "2024_Spring_Summer.xlsx", quiet=False)
 
 # 读取Excel文件
 excel_file = "./2024_Spring_Summer.xlsx"
-df = pd.read_excel(excel_file, header=None, skiprows=1,engine='openpyxl')
+df = pd.read_excel(excel_file, header=None,engine='openpyxl')
 df.columns = ['日期', '姓名', '文章', '会议']
 df.drop(0,inplace=True) # 删除相同的'日期', '姓名', '文章', '会议'行
 
